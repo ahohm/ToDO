@@ -7,6 +7,22 @@
 </ion-header>
 
 <ion-content>
+    <ion-tabs>
+        <ion-tab-bar slot="bottom">
+            <ion-tab-button tab="schedule">
+                <ion-icon name="calendar"></ion-icon>
+                <ion-label>ToDO</ion-label>
+                <ion-badge>6</ion-badge>
+            </ion-tab-button>
+
+            <ion-tab-button tab="checkmark-done-outline">
+                <ion-icon name="checkmark-done-outline"></ion-icon>
+                <ion-label>Done</ion-label>
+            </ion-tab-button>
+
+
+        </ion-tab-bar>
+    </ion-tabs>
     <div class="bg-img">
         <h1>Today,</h1>
         <h5>{{currentDate}}</h5>
