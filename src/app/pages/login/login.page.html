@@ -1,9 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  
+  <div class="login-bg-img">
+    <ion-thumbnail slot="start" style="margin: 0 auto;"><ion-img src="../../../assets/auth.png"></ion-img></ion-thumbnail>
+    
+    <app-auth-form #loginForm (formSubmitted)="loginUser($event)" [actionButtonText]="'SIGN IN'"></app-auth-form>
 
+  <section class="ion-margin-start">
+      <ion-button  color="success" routerLink="/signup">
+        Register
+      </ion-button>
+    
+
+      <ion-button  color="light" routerLink="/reset-password">
+        forgot password 
+      </ion-button>
+    </section>
+  </div>
 </ion-content>
