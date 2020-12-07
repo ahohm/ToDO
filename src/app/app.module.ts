@@ -10,20 +10,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import {environment} from 'src/environments/environment'
 
-export const firebaseConfig = {
-    apiKey: 'AIzaSyBUvVI-T5pbF6z-Y5X7iI1QguY01qjVlAw',
-    authDomain: 'todo-b7ffe.firebaseapp.com',
-    projectId: 'todo-b7ffe',
-    storageBucket: 'todo-b7ffe.appspot.com',
-    messagingSenderId: '1009962099875',
-    appId: '1:1009962099875:web:fc879db952413224490b16'
-  };
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(),
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AppRoutingModule],
   providers: [

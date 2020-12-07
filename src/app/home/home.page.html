@@ -9,13 +9,13 @@
 <ion-content>
     <ion-tabs>
         <ion-tab-bar slot="bottom">
-            <ion-tab-button tab="schedule">
+            <ion-tab-button tab="todo">
                 <ion-icon name="calendar"></ion-icon>
                 <ion-label>ToDO</ion-label>
-                <ion-badge>6</ion-badge>
+                <ion-badge >{{allTasks.length}}</ion-badge>
             </ion-tab-button>
 
-            <ion-tab-button tab="checkmark-done-outline">
+            <ion-tab-button tab="done">
                 <ion-icon name="checkmark-done-outline"></ion-icon>
                 <ion-label>Done</ion-label>
             </ion-tab-button>
@@ -23,24 +23,5 @@
 
         </ion-tab-bar>
     </ion-tabs>
-    <div class="bg-img">
-        <h1>Today,</h1>
-        <h5>{{currentDate}}</h5>
-        <ion-card *ngFor="let task of allTasks">
-            <ion-item>
-                <ion-checkbox (ionChange)="changeCheckedState(task)" [(ngModel)]="task.checked" color="success"></ion-checkbox>
-                <ion-label>
-                    <h2 *ngIf="!task.checked">{{task.text}} </h2>
-                    <h2 *ngIf="task.checked" style="text-decoration: line-through;">{{task.text}} </h2>
-                    <p>{{task.date}}</p>
-                </ion-label>
-            </ion-item>
-        </ion-card>
-        <ion-item>
-            <ion-input [(ngModel)]="newTask"></ion-input>
-            <ion-button (click)="addNewTask()">
-                <ion-icon slot="icon-only" name="add-outline"></ion-icon>
-            </ion-button>
-        </ion-item>
-    </div>
+
 </ion-content>
